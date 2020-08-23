@@ -10,7 +10,7 @@ No desc
 
 ## Running
 
-Run application using `node dist` with arguments:
+Run application using `node dev`
 
 
 
