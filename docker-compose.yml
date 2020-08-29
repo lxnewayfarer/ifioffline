@@ -1,12 +1,32 @@
-version: "3.7"
+version: '3'
 
 services:
-  postgres:
-    image: postgres:11.3-alpine
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+     - /var/postgresql/data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+     - "${POSTGRES_PORT}:5432"
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "xxx@xxx.com"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+     - "80:80"
+    depends_on:
+     - db
+    links:
+      - db
+
+
+
       
-  redis:
-    image: redis:5-alpine
-    ports:
-      - 6379:6379
