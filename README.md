@@ -1,16 +1,20 @@
 # README
 
-No desc
+No desccription yet
 
 ## Setup
 
-Copy `.env.example` to `.env` and configure it
+Copy `.env.example` to `.env` and configure it (not using now)
 
-## Seed
+To install necessary packages use `npm install`
+
+## DB seed
 
 Use `npm run seed` to seed database (drop and insert test values)
 
 ## Running
+
+Run docker containers (Postgres, pgAdmin4) using `docker-compose up`
 
 Run application in development mode using `npm run dev`
 
