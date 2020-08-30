@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node app/app.js",
     "dev": "nodemon app/app.js",
-    "seed": "node app/models/seed.js"
+    "seed": "node models/seed.js"
   },
   "repository": {
     "type": "git",
