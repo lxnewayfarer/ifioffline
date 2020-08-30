@@ -1,19 +1,19 @@
 const express = require('express')
-const config = require('config')
-const db = require("../models");
-
-const PORT = config.get('port') || 5000
+const bodyParser = require('body-parser')
+require('dotenv').config()
+// const db = require('../models')
+const index = require('../routes/index.js')
 
 const app = express()
 
-async function start() {
-    
-}
+// eslint-disable-next-line no-undef
+app.set('port', process.env.APP_PORT || 3000)
+app.use(bodyParser.json()) // json parcer
+app.use(bodyParser.urlencoded({ extended: true }))
+// probably need to use `app.use(errorHandler())` to handle errors through api
 
-start()
+app.use('/api', index)
 
-app.listen(PORT, () => console.log(`App has been stared on port ${PORT}...`))
-
-
-
-
+app.listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'))
+})
