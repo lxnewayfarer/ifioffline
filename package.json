@@ -20,7 +20,8 @@
   "scripts": {
     "start": "node app/app.js",
     "dev": "nodemon app/app.js",
-    "seed": "node models/seed.js"
+    "seed": "node models/seed.js",
+    "sync": "node models/sync.js"
   },
   "repository": {
     "type": "git",

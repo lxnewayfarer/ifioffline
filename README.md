@@ -8,9 +8,10 @@ Copy `.env.example` to `.env` and configure it (not using now)
 
 To install necessary packages use `npm install`
 
-## DB seed
+## Database actions
 
-Use `npm run seed` to seed database (drop and insert test values)
+- Use `npm run seed` to seed database (drop, sync and insert test values)
+- Use `npm run sync` to sync database (sync all defined models to the DB)
 
 ## Running
 
