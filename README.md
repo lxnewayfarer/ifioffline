@@ -18,7 +18,7 @@ Run docker containers (Postgres, pgAdmin4) using `docker-compose up`
 
 Run application in development mode using `npm run dev`
 
-# + dev tips
+## + dev tips
 
 1. To get container's IP (host), e. g. to connect pgAdmin with postgres inside of docker engine, use
 
