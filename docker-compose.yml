@@ -4,7 +4,7 @@ services:
 
   db:
     image: postgres
-    restart: always
+    restart: "no"
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"
@@ -16,7 +16,7 @@ services:
 
   pgadmin4:
     image: dpage/pgadmin4
-    restart: always
+    restart: "no"
     environment:
       PGADMIN_DEFAULT_EMAIL: "xxx@xxx.com"
       PGADMIN_DEFAULT_PASSWORD: "postgres"
