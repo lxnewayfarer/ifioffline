@@ -15,12 +15,20 @@ db.sequelize = sequelize
 db.Users = require('./User.js')(sequelize, Sequelize)
 db.Services = require('./Service.js')(sequelize, Sequelize)
 db.TrackedServices = require('./TrackedService.js')(sequelize, Sequelize)
+db.Recievers = require('./Reciever.js')(sequelize, Sequelize)
+db.UserDelay = require('./UserDelay.js')(sequelize, Sequelize)
 
-// associations
-db.Users.hasMany(db.TrackedServices, { as: 'Services' })
-db.TrackedServices.belongsTo(db.Services, { as: 'Services' })
+// Database associations
+db.Users.hasMany(db.TrackedServices, { foreignKey: 'id_user', sourceKey: 'id' })
+db.TrackedServices.belongsTo(db.Users, { foreignKey: 'id_user', targetKey: 'id' })
+
+db.Users.hasMany(db.Recievers, { foreignKey: 'id_user', sourceKey: 'id' })
+db.Recievers.belongsTo(db.Users, { foreignKey: 'id_user', targetKey: 'id' })
+
+db.Users.hasOne(db.UserDelay, { foreignKey: 'id_user', sourceKey: 'id' })
+db.UserDelay.belongsTo(db.Users, { foreignKey: 'id_user', targetKey: 'id' })
+
+db.Services.hasMany(db.Recievers, { foreignKey: 'id_service', sourceKey: 'id' })
+db.Recievers.belongsTo(db.Services, { foreignKey: 'id_service', targetKey: 'id' })
 
 module.exports = db
-
-//reciever {id_user, id_service, identifier, text}
-//user_delay {id_user, value} 
