@@ -3,25 +3,25 @@ module.exports = (sequelize, Sequelize) => {
     name: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     link: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     logo: {
       type: Sequelize.STRING,
-      unique: true
+      unique: true,
     },
     isCheckable: {
       type: Sequelize.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     isSendable: {
       type: Sequelize.BOOLEAN,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   })
 
   return Service

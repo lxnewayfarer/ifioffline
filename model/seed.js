@@ -1,7 +1,7 @@
 const db = require('.')
 
 // test data for database
-async function start () {
+async function start() {
   await db.sequelize.sync({ force: true }).then(() => {
     console.log('Drop and re-sync db.')
   })
@@ -14,9 +14,9 @@ async function start () {
   db.Services.create({ name: 'Instagram', link: 'instagram.com', isCheckable: true, isSendable: false })
   db.Services.create({ name: 'Facebook', link: 'facebook.com', isCheckable: true, isSendable: false })
 
-  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 3, id_service: 1})
-  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 1, id_service: 3})
-  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 2, id_service: 2})
+  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 3, id_service: 1 })
+  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 1, id_service: 3 })
+  db.TrackedServices.create({ identifier: 'lxnewayfarer', id_user: 2, id_service: 2 })
 
   db.Recievers.create({ identifier: 'lxnewayfarer', message: '111Hello! How are you111', id_user: 1, id_service: 1 })
   db.Recievers.create({ identifier: 'lxnewayfarer', message: '222Hello! How are you222', id_user: 2, id_service: 2 })

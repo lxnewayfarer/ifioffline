@@ -23,4 +23,4 @@ Run application in development mode using `npm run dev`
 
 1. To get container's IP (host), e. g. to connect pgAdmin with postgres inside of docker engine, use
 
-`docker inspect CONTAINER_ID  | grep IPAddress`
+`docker inspect CONTAINER_ID | grep IPAddress`
